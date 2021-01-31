@@ -129,4 +129,16 @@ function moveTouch(e) {
   e.preventDefault();
 }
 
-;
+; //   SLIDER
+
+var sliderBtnPrev = document.querySelector(".slider__prev");
+var sliderBtnNext = document.querySelector(".slider__next");
+var sliderItems = document.querySelectorAll(".slider__item");
+var curItem = document.querySelector(".center__item"); // sliderBtnPrev.addEventListener( 'click', item=>{
+//     // for(  let i=0; i<sliderItems.length; i++ ){
+//     //     if( sliderItems[i] ){
+//     //     }
+//     //    }
+// });
+
+sliderBtnNext.addEventListener('click', function (item) {});
