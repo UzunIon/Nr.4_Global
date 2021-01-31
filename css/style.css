@@ -516,7 +516,7 @@ body {
   position: absolute;
   top: 30%;
   right: 25%;
-  font-size: 55px;
+  font-size: calc(14px + 41 * ((100vw - 320px) / 960));
 }
 
 .header__nav .header__nav-list {
@@ -560,7 +560,7 @@ body {
 }
 
 .header .header__logo .header__title {
-  font-size: 12px;
+  font-size: calc(10px + 2 * ((100vw - 320px) / 960));
   font-weight: 900;
   text-transform: uppercase;
   margin-left: 10px;
@@ -618,6 +618,7 @@ body {
   max-width: 90%;
   margin: 0;
   margin-top: 45px;
+  z-index: 20;
 }
 
 .side__nav .side__nav-list {
@@ -636,7 +637,7 @@ body {
   padding: 10px 0 10px 10px;
   height: 70vh;
   list-style: none;
-  font-size: 14px;
+  font-size: calc(10px + 4 * ((100vw - 320px) / 960));
   counter-reset: section;
 }
 
@@ -785,7 +786,7 @@ body {
 }
 
 .main .home .inner .home__content-left .home__content-title {
-  font-size: 73px;
+  font-size: calc(33px + 40 * ((100vw - 320px) / 960));
   font-weight: 900;
   line-height: 70px;
   letter-spacing: 3px;
@@ -795,7 +796,7 @@ body {
 .main .home .inner .home__content-left .home__content-btn {
   position: relative;
   padding: 7px 9px 6px 9px;
-  font-size: 14px;
+  font-size: calc(10px + 4 * ((100vw - 320px) / 960));
   font-weight: 700;
   margin-top: 40px;
   border: none;
@@ -850,6 +851,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  bottom: 0;
   justify-self: flex-end;
   z-index: 0;
 }
@@ -857,9 +859,8 @@ body {
 .main .home .inner .home__content-right .home__image {
   width: 100%;
   max-width: auto;
-  height: 110%;
+  height: 100%;
   position: relative;
-  bottom: 36px;
 }
 
 .main .home .home__content-footer {
@@ -885,7 +886,7 @@ body {
 }
 
 .main .home .home__content-footer .home__content-items .home__items-title {
-  font-size: 14px;
+  font-size: calc(10px + 4 * ((100vw - 320px) / 960));
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -924,7 +925,7 @@ body {
 }
 
 .main .home .home__content-footer .home__content-items .home__items-text {
-  font-size: 13px;
+  font-size: calc(10px + 4 * ((100vw - 320px) / 960));
   font-weight: 500;
   letter-spacing: 0.5px;
   line-height: 15px;
@@ -949,7 +950,7 @@ body {
 }
 
 .main .works .works__title {
-  font-size: 30px;
+  font-size: calc(20px + 10 * ((100vw - 320px) / 960));
   font-weight: 900;
   margin-bottom: 4rem;
 }
@@ -980,14 +981,14 @@ body {
 }
 
 .main .works .works__slider .works__slider-item .works__slider-title {
-  font-size: 12px;
+  font-size: calc(10px + 4 * ((100vw - 320px) / 960));
   font-weight: 700;
   text-transform: uppercase;
   margin: 2rem 0;
 }
 
 .main .works .works__slider .works__slider-item .works__slider-subtitle {
-  font-size: 16px;
+  font-size: calc(12px + 4 * ((100vw - 320px) / 960));
   font-weight: 400;
   text-align: center;
 }
@@ -1016,7 +1017,7 @@ body {
 }
 
 .main .works .works__slider .center__item .works__slider-title {
-  font-size: 18px;
+  font-size: calc(12px + 6 * ((100vw - 320px) / 960));
 }
 
 .main .works .works__slider .right__item {
@@ -1115,7 +1116,7 @@ body {
 }
 
 .main .about .about__title {
-  font-size: 73px;
+  font-size: calc(33px + 40 * ((100vw - 320px) / 960));
   font-weight: 900;
   line-height: 70px;
   letter-spacing: 3px;
@@ -1130,7 +1131,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  font-size: 12px;
+  font-size: calc(8px + 4 * ((100vw - 320px) / 960));
   text-transform: uppercase;
   background-color: Transparent;
   background-repeat: no-repeat;
@@ -1256,7 +1257,7 @@ body {
 }
 
 .main .contact .contact__block .contact__block-item {
-  font-size: 14px;
+  font-size: calc(10px + 4 * ((100vw - 320px) / 960));
   height: 5%;
   color: #ffffff;
   -webkit-transition: all .2s linear;
@@ -1372,7 +1373,7 @@ body {
 }
 
 .main .hire__us .hire__us-title {
-  font-size: 30px;
+  font-size: calc(18px + 12 * ((100vw - 320px) / 960));
 }
 
 .main .hire__us .hire__us-form {
@@ -1443,7 +1444,7 @@ body {
   width: 180px;
   height: 40px;
   border: 1px solid #ffffff;
-  font-size: 18px;
+  font-size: calc(12px + 6 * ((100vw - 320px) / 960));
   cursor: pointer;
   -webkit-transition: all .2s linear;
   -o-transition: all .2s linear;
@@ -1489,7 +1490,7 @@ body {
   border-bottom: 1px solid #ffffff;
   background-color: transparent;
   color: #ffffff;
-  font-size: 25px;
+  font-size: calc(14px + 11 * ((100vw - 320px) / 960));
   margin-right: 30px;
   padding-bottom: 10px;
   -webkit-transition: all .2s linear;
@@ -1530,35 +1531,35 @@ body {
 
 .main .hire__us .hire__us-form .hire__us-input .hire__us-name:focus::-webkit-input-placeholder {
   color: #252525;
-  font-size: 15px;
+  font-size: calc(11px + 4 * ((100vw - 320px) / 960));
   -webkit-transition: all .2s linear;
   transition: all .2s linear;
 }
 
 .main .hire__us .hire__us-form .hire__us-input .hire__us-name:focus::-moz-placeholder {
   color: #252525;
-  font-size: 15px;
+  font-size: calc(11px + 4 * ((100vw - 320px) / 960));
   -moz-transition: all .2s linear;
   transition: all .2s linear;
 }
 
 .main .hire__us .hire__us-form .hire__us-input .hire__us-name:focus:-ms-input-placeholder {
   color: #252525;
-  font-size: 15px;
+  font-size: calc(11px + 4 * ((100vw - 320px) / 960));
   -ms-transition: all .2s linear;
   transition: all .2s linear;
 }
 
 .main .hire__us .hire__us-form .hire__us-input .hire__us-name:focus::-ms-input-placeholder {
   color: #252525;
-  font-size: 15px;
+  font-size: calc(11px + 4 * ((100vw - 320px) / 960));
   -ms-transition: all .2s linear;
   transition: all .2s linear;
 }
 
 .main .hire__us .hire__us-form .hire__us-input .hire__us-name:focus::placeholder {
   color: #252525;
-  font-size: 15px;
+  font-size: calc(11px + 4 * ((100vw - 320px) / 960));
   -webkit-transition: all .2s linear;
   -o-transition: all .2s linear;
   transition: all .2s linear;
@@ -1569,7 +1570,7 @@ body {
   border-bottom: 1px solid #ffffff;
   background-color: transparent;
   color: #ffffff;
-  font-size: 25px;
+  font-size: calc(14px + 11 * ((100vw - 320px) / 960));
   padding-bottom: 10px;
 }
 
@@ -1606,35 +1607,35 @@ body {
 
 .main .hire__us .hire__us-form .hire__us-input .hire__us-email:focus::-webkit-input-placeholder {
   color: #252525;
-  font-size: 15px;
+  font-size: calc(11px + 4 * ((100vw - 320px) / 960));
   -webkit-transition: all .2s linear;
   transition: all .2s linear;
 }
 
 .main .hire__us .hire__us-form .hire__us-input .hire__us-email:focus::-moz-placeholder {
   color: #252525;
-  font-size: 15px;
+  font-size: calc(11px + 4 * ((100vw - 320px) / 960));
   -moz-transition: all .2s linear;
   transition: all .2s linear;
 }
 
 .main .hire__us .hire__us-form .hire__us-input .hire__us-email:focus:-ms-input-placeholder {
   color: #252525;
-  font-size: 15px;
+  font-size: calc(11px + 4 * ((100vw - 320px) / 960));
   -ms-transition: all .2s linear;
   transition: all .2s linear;
 }
 
 .main .hire__us .hire__us-form .hire__us-input .hire__us-email:focus::-ms-input-placeholder {
   color: #252525;
-  font-size: 15px;
+  font-size: calc(11px + 4 * ((100vw - 320px) / 960));
   -ms-transition: all .2s linear;
   transition: all .2s linear;
 }
 
 .main .hire__us .hire__us-form .hire__us-input .hire__us-email:focus::placeholder {
   color: #252525;
-  font-size: 15px;
+  font-size: calc(11px + 4 * ((100vw - 320px) / 960));
   -webkit-transition: all .2s linear;
   -o-transition: all .2s linear;
   transition: all .2s linear;

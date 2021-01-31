@@ -48,6 +48,7 @@ for (var i = 0; i < activeSideItem.length; i++) {
 
 
 window.addEventListener('wheel', function (e) {
+  // e.preventDefault();
   var currentPos = document.querySelector(".is-active");
   var currentCont = document.querySelector(".section-active");
   var delta = e.deltaY || e.detail || e.wheelDelta;
@@ -71,6 +72,61 @@ window.addEventListener('wheel', function (e) {
     currentCont.classList.remove("section-active");
   } else {
     return;
-  } // e.preventDefault();
-
+  }
 }); // }
+// document.querySelector(".wrapper").addEventListener('swiped', function(e) {
+//     console.log(e.target); // element that was swiped
+//     console.log(e.detail.dir); // swipe direction
+//   });
+// HAMMER for swipes
+// const targetElement = document.getElementById('.wrapper'),
+// mc = new Hammer(targetElement);
+// mc.get('swipe').set({ direction: Hammer.DIRECTION_VERTICAL });
+// mc.on('swipeup swipedown', function(e) {
+// console.log(e)
+// console.log(targetElement);
+// });
+
+window.addEventListener("touchstart", startTouch, false);
+window.addEventListener("touchmove", moveTouch, false); // Swipe Up / Down / Left / Right
+
+var initialY = null;
+
+function startTouch(e) {
+  initialY = e.touches[0].clientY;
+}
+
+;
+
+function moveTouch(e) {
+  var currentPos = document.querySelector(".is-active");
+  var currentCont = document.querySelector(".section-active");
+
+  if (initialY === null) {
+    return;
+  }
+
+  var currentY = e.touches[0].clientY;
+  var diffY = initialY - currentY; // sliding vertically
+
+  if (diffY > 0) {
+    var nextElem = currentPos.nextElementSibling;
+    var nextCont = currentCont.nextElementSibling;
+    nextElem.classList.add("is-active");
+    currentPos.classList.remove("is-active");
+    nextCont.classList.add("section-active");
+    currentCont.classList.remove("section-active");
+  } else {
+    var prevElem = currentPos.previousElementSibling;
+    var prevCont = currentCont.previousElementSibling;
+    prevElem.classList.add("is-active");
+    currentPos.classList.remove("is-active");
+    prevCont.classList.add("section-active");
+    currentCont.classList.remove("section-active");
+  }
+
+  initialY = null;
+  e.preventDefault();
+}
+
+;
