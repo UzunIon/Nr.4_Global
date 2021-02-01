@@ -516,7 +516,7 @@ body {
   position: absolute;
   top: 30%;
   right: 25%;
-  font-size: calc(14px + 41 * ((100vw - 320px) / 960));
+  font-size: calc(16px + 39 * ((100vw - 320px) / 960));
 }
 
 .header__nav .header__nav-list {
@@ -560,7 +560,7 @@ body {
 }
 
 .header .header__logo .header__title {
-  font-size: calc(10px + 2 * ((100vw - 320px) / 960));
+  font-size: calc(10px + 4 * ((100vw - 320px) / 960));
   font-weight: 900;
   text-transform: uppercase;
   margin-left: 10px;
@@ -786,9 +786,9 @@ body {
 }
 
 .main .home .inner .home__content-left .home__content-title {
-  font-size: calc(23px + 50 * ((100vw - 320px) / 960));
+  font-size: calc(25px + 48 * ((100vw - 320px) / 960));
   font-weight: 900;
-  line-height: 70px;
+  line-height: 1em;
   letter-spacing: 3px;
   padding-right: 20px;
 }
@@ -799,6 +799,7 @@ body {
   font-size: calc(12px + 8 * ((100vw - 320px) / 960));
   font-weight: 700;
   margin-top: 40px;
+  margin-bottom: 20px;
   border: none;
   background-color: #0b0b0b;
   color: #ffffff;
@@ -1116,9 +1117,9 @@ body {
 }
 
 .main .about .about__title {
-  font-size: calc(33px + 40 * ((100vw - 320px) / 960));
+  font-size: calc(25px + 48 * ((100vw - 320px) / 960));
   font-weight: 900;
-  line-height: 70px;
+  line-height: 1em;
   letter-spacing: 3px;
 }
 
@@ -1131,13 +1132,16 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 20px;
+  margin: 40px 0;
   font-size: calc(8px + 4 * ((100vw - 320px) / 960));
   text-transform: uppercase;
   background-color: Transparent;
   background-repeat: no-repeat;
   color: #ffffff;
-  padding: 10px 20px;
-  margin: 40px 0;
 }
 
 .main .about .about__btn::before {
@@ -1178,7 +1182,7 @@ body {
 .main .about .outer .about__card {
   position: relative;
   width: 170px;
-  height: 90px;
+  height: 65px;
   margin-right: 30px;
   text-decoration: none;
   border: 10px solid #0023ff;
@@ -1665,6 +1669,10 @@ body {
     position: absolute !important;
   }
 
+  .main .home .home__content-right .home__image {
+    width: 180px !important;
+  }
+
   .main .home .home__content-footer {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1703,7 +1711,6 @@ body {
   }
 
   .main .outer {
-    height: 50vh;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
