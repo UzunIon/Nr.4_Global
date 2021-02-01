@@ -758,13 +758,9 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 85vh;
 }
 
 .main .home .inner {
@@ -774,8 +770,9 @@ body {
   display: flex;
   -ms-flex-line-pack: distribute;
       align-content: space-around;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .main .home .inner .home__content-left {
@@ -796,7 +793,7 @@ body {
 .main .home .inner .home__content-left .home__content-btn {
   position: relative;
   padding: 7px 9px 6px 9px;
-  font-size: calc(12px + 8 * ((100vw - 320px) / 960));
+  font-size: calc(12px + 6 * ((100vw - 320px) / 960));
   font-weight: 700;
   margin-top: 40px;
   margin-bottom: 20px;
@@ -848,18 +845,19 @@ body {
 }
 
 .main .home .inner .home__content-right {
-  position: relative;
+  position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   bottom: 0;
+  right: 0;
   justify-self: flex-end;
   z-index: 0;
 }
 
 .main .home .inner .home__content-right .home__image {
-  width: auto;
   max-width: 100%;
+  width: auto;
   height: 100%;
   position: relative;
 }
@@ -945,7 +943,6 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 85vh;
   width: 100%;
 }
 
@@ -1109,9 +1106,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   height: 85vh;
   background: url(../img/about-visual.png) no-repeat right;
 }
@@ -1360,6 +1354,7 @@ body {
 }
 
 .main .hire__us {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1372,8 +1367,6 @@ body {
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  height: 80vh;
-  padding: 45px 0 30px 0;
 }
 
 .main .hire__us .hire__us-title {
@@ -1656,9 +1649,34 @@ body {
   background-color: #001599;
 }
 
+@media (min-width: 576px) {
+  .main .home {
+    height: 80vh;
+    padding: 5% 0 0 0;
+  }
+
+  .main .works {
+    height: 85vh;
+  }
+
+  .main .about {
+    height: 85vh;
+    padding: 5% 0;
+  }
+
+  .main .hire__us {
+    height: 85vh;
+    padding: 5% 0;
+  }
+}
+
 @media (max-width: 576px) {
   .side__nav {
     display: none !important;
+  }
+
+  .main .home {
+    padding: 15% 0;
   }
 
   .main .home .home__content-left {
@@ -1710,7 +1728,11 @@ body {
     top: 80px;
   }
 
-  .main .outer {
+  .main .about {
+    padding: 15% 0;
+  }
+
+  .main .about .outer {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -1722,14 +1744,14 @@ body {
         align-content: space-around;
   }
 
-  .main .outer .about__card {
+  .main .about .outer .about__card {
     margin-right: 0 !important;
     width: 100% !important;
     margin-bottom: 13px;
   }
 
   .main .hire__us {
-    padding-top: 20px;
+    padding: 12% 0;
   }
 
   .main .hire__us .hire__us-title {
@@ -1763,9 +1785,11 @@ body {
   .main .hire__us-input .hire__us-name {
     width: 95% !important;
     margin-right: 0 !important;
+    margin-bottom: 10px;
   }
 
   .main .hire__us-input .hire__us-email {
     width: 95% !important;
+    margin-bottom: 20px;
   }
 }
