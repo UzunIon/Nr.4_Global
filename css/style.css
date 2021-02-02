@@ -704,9 +704,9 @@ template {
 .about .about__title span:nth-child(2):before {
   position: absolute;
   content: "";
-  left: 2%;
-  top: 17%;
-  width: 25%;
+  left: 1%;
+  top: 16%;
+  width: 28%;
   height: 25%;
   background-color: #0023ff;
   border-radius: 50%;
@@ -976,10 +976,9 @@ template {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  height: 60%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 80%;
 }
 
@@ -987,15 +986,22 @@ template {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-line-pack: space-evenly;
+      align-content: space-evenly;
   width: 100%;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+.hire__us .hire__us-form .hire__us-row:nth-child(2) {
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 .hire__us .hire__us-form .hire__us-row .wrapper {
@@ -1357,7 +1363,7 @@ template {
   -webkit-box-ordinal-group: 1;
       -ms-flex-order: 0;
           order: 0;
-  padding: 3%;
+  padding: 2%;
   margin-bottom: 10%;
   border-radius: 50%;
   background-color: #252525;
@@ -1390,7 +1396,7 @@ template {
   -webkit-box-ordinal-group: 5;
       -ms-flex-order: 4;
           order: 4;
-  padding: 3%;
+  padding: 2%;
   margin-bottom: 10%;
   border-radius: 100%;
   background-color: #252525;
@@ -1680,8 +1686,11 @@ body {
   }
 
   .hire__us {
-    height: 85vh;
     padding: 5% 0;
+  }
+
+  .hire__us .hire__us-row {
+    margin-bottom: 4%;
   }
 
   .works {
@@ -1740,6 +1749,9 @@ body {
   }
 
   .hire__us {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     padding: 12% 0;
   }
 
@@ -1748,7 +1760,6 @@ body {
   }
 
   .hire__us-form {
-    height: 100% !important;
     -webkit-box-pack: center !important;
         -ms-flex-pack: center !important;
             justify-content: center !important;
@@ -1768,18 +1779,21 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    height: 35%;
   }
 
   .hire__us-input .hire__us-name {
     width: 95% !important;
     margin-right: 0 !important;
-    margin-bottom: 10px;
+    margin-bottom: 7%;
   }
 
   .hire__us-input .hire__us-email {
     width: 95% !important;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+  }
+
+  .hire__us-btn {
+    padding: 10px 20px !important;
   }
 
   .works__slider .works__slider-img {
@@ -1810,5 +1824,15 @@ body {
 
   .side__nav {
     display: none !important;
+  }
+}
+
+@media (max-width: 566px) {
+  .works .works__slider .slider__prev {
+    padding: 3%;
+  }
+
+  .works .works__slider .slider__next {
+    padding: 3%;
   }
 }
