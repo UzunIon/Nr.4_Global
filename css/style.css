@@ -2,32 +2,32 @@
 
 @font-face {
   font-family: 'Montserrat';
-  src: url("fonts/Montserrat-Black.eot");
-  src: local("☺"), url("fonts/Montserrat-Black.woff") format("woff"), url("fonts/Montserrat-Black.ttf") format("truetype"), url("fonts/Montserrat-Black.svg") format("svg");
+  src: url("../fonts/Montserrat-Black.eot");
+  src: local("☺"), url("../fonts/Montserrat-Black.woff") format("woff"), url("../fonts/Montserrat-Black.ttf") format("truetype"), url("../fonts/Montserrat-Black.svg") format("svg");
   font-weight: 900;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Montserrat';
-  src: url("fonts/Montserrat-Bold.eot");
-  src: local("☺"), url("fonts/Montserrat-Bold.woff") format("woff"), url("fonts/Montserrat-Bold.ttf") format("truetype"), url("fonts/Montserrat-Bold.svg") format("svg");
+  src: url("../fonts/Montserrat-Bold.eot");
+  src: local("☺"), url("../fonts/Montserrat-Bold.woff") format("woff"), url("../fonts/Montserrat-Bold.ttf") format("truetype"), url("../fonts/Montserrat-Bold.svg") format("svg");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Montserrat';
-  src: url("fonts/Montserrat-Regular.eot");
-  src: local("☺"), url("fonts/Montserrat-Regular.woff") format("woff"), url("fonts/Montserrat-Regular.ttf") format("truetype"), url("fonts/Montserrat-Regular.svg") format("svg");
+  src: url("../fonts/Montserrat-Regular.eot");
+  src: local("☺"), url("../fonts/Montserrat-Regular.woff") format("woff"), url("../fonts/Montserrat-Regular.ttf") format("truetype"), url("../fonts/Montserrat-Regular.svg") format("svg");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Montserrat';
-  src: url("fonts/Montserrat-Light.eot");
-  src: local("☺"), url("fonts/Montserrat-Light.woff") format("woff"), url("fonts/Montserrat-Light.ttf") format("truetype"), url("fonts/Montserrat-Light.svg") format("svg");
+  src: url("../fonts/Montserrat-Light.eot");
+  src: local("☺"), url("../fonts/Montserrat-Light.woff") format("woff"), url("../fonts/Montserrat-Light.ttf") format("truetype"), url("../fonts/Montserrat-Light.svg") format("svg");
   font-weight: 300;
   font-style: normal;
 }
@@ -514,6 +514,7 @@ template {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  height: 85vh;
 }
 
 .home .inner {
@@ -622,7 +623,7 @@ template {
 }
 
 .home .home__content-footer .home__content-items .home__items-title {
-  font-size: calc(10px + 4 * ((100vw - 320px) / 960));
+  font-size: calc(12px + 2 * ((100vw - 320px) / 960));
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -661,7 +662,7 @@ template {
 }
 
 .home .home__content-footer .home__content-items .home__items-text {
-  font-size: calc(10px + 4 * ((100vw - 320px) / 960));
+  font-size: calc(12px + 2 * ((100vw - 320px) / 960));
   font-weight: 500;
   letter-spacing: 0.5px;
   line-height: 15px;
@@ -681,6 +682,7 @@ template {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  height: 85vh;
   background: url(../img/about-visual.png) no-repeat right;
 }
 
@@ -720,7 +722,7 @@ template {
           align-items: center;
   padding: 10px 20px;
   margin: 40px 0;
-  font-size: calc(8px + 4 * ((100vw - 320px) / 960));
+  font-size: calc(12px + 1 * ((100vw - 320px) / 960));
   text-transform: uppercase;
   background-color: Transparent;
   background-repeat: no-repeat;
@@ -730,10 +732,10 @@ template {
 .about .about__btn::before {
   position: absolute;
   content: "";
-  top: 0px;
+  top: 0;
   left: 0;
   width: 0;
-  height: 30px;
+  height: 33px;
   background-color: #0023ff;
   z-index: -1;
   -webkit-transition: all .3s linear;
@@ -843,7 +845,7 @@ template {
 }
 
 .contact .contact__block .contact__block-item {
-  font-size: calc(10px + 4 * ((100vw - 320px) / 960));
+  font-size: calc(12px + 2 * ((100vw - 320px) / 960));
   height: 5%;
   color: #ffffff;
   -webkit-transition: all .2s linear;
@@ -1122,35 +1124,35 @@ template {
 
 .hire__us .hire__us-form .hire__us-input .hire__us-name:focus::-webkit-input-placeholder {
   color: #252525;
-  font-size: calc(11px + 4 * ((100vw - 320px) / 960));
+  font-size: calc(12px + 3 * ((100vw - 320px) / 960));
   -webkit-transition: all .2s linear;
   transition: all .2s linear;
 }
 
 .hire__us .hire__us-form .hire__us-input .hire__us-name:focus::-moz-placeholder {
   color: #252525;
-  font-size: calc(11px + 4 * ((100vw - 320px) / 960));
+  font-size: calc(12px + 3 * ((100vw - 320px) / 960));
   -moz-transition: all .2s linear;
   transition: all .2s linear;
 }
 
 .hire__us .hire__us-form .hire__us-input .hire__us-name:focus:-ms-input-placeholder {
   color: #252525;
-  font-size: calc(11px + 4 * ((100vw - 320px) / 960));
+  font-size: calc(12px + 3 * ((100vw - 320px) / 960));
   -ms-transition: all .2s linear;
   transition: all .2s linear;
 }
 
 .hire__us .hire__us-form .hire__us-input .hire__us-name:focus::-ms-input-placeholder {
   color: #252525;
-  font-size: calc(11px + 4 * ((100vw - 320px) / 960));
+  font-size: calc(12px + 3 * ((100vw - 320px) / 960));
   -ms-transition: all .2s linear;
   transition: all .2s linear;
 }
 
 .hire__us .hire__us-form .hire__us-input .hire__us-name:focus::placeholder {
   color: #252525;
-  font-size: calc(11px + 4 * ((100vw - 320px) / 960));
+  font-size: calc(12px + 3 * ((100vw - 320px) / 960));
   -webkit-transition: all .2s linear;
   -o-transition: all .2s linear;
   transition: all .2s linear;
@@ -1198,35 +1200,35 @@ template {
 
 .hire__us .hire__us-form .hire__us-input .hire__us-email:focus::-webkit-input-placeholder {
   color: #252525;
-  font-size: calc(11px + 4 * ((100vw - 320px) / 960));
+  font-size: calc(12px + 3 * ((100vw - 320px) / 960));
   -webkit-transition: all .2s linear;
   transition: all .2s linear;
 }
 
 .hire__us .hire__us-form .hire__us-input .hire__us-email:focus::-moz-placeholder {
   color: #252525;
-  font-size: calc(11px + 4 * ((100vw - 320px) / 960));
+  font-size: calc(12px + 3 * ((100vw - 320px) / 960));
   -moz-transition: all .2s linear;
   transition: all .2s linear;
 }
 
 .hire__us .hire__us-form .hire__us-input .hire__us-email:focus:-ms-input-placeholder {
   color: #252525;
-  font-size: calc(11px + 4 * ((100vw - 320px) / 960));
+  font-size: calc(12px + 3 * ((100vw - 320px) / 960));
   -ms-transition: all .2s linear;
   transition: all .2s linear;
 }
 
 .hire__us .hire__us-form .hire__us-input .hire__us-email:focus::-ms-input-placeholder {
   color: #252525;
-  font-size: calc(11px + 4 * ((100vw - 320px) / 960));
+  font-size: calc(12px + 3 * ((100vw - 320px) / 960));
   -ms-transition: all .2s linear;
   transition: all .2s linear;
 }
 
 .hire__us .hire__us-form .hire__us-input .hire__us-email:focus::placeholder {
   color: #252525;
-  font-size: calc(11px + 4 * ((100vw - 320px) / 960));
+  font-size: calc(12px + 3 * ((100vw - 320px) / 960));
   -webkit-transition: all .2s linear;
   -o-transition: all .2s linear;
   transition: all .2s linear;
@@ -1257,6 +1259,7 @@ template {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: 85vh;
   width: 100%;
 }
 
@@ -1295,7 +1298,8 @@ template {
 }
 
 .works .works__slider .works__slider-item .works__slider-title {
-  font-size: calc(8px + 6 * ((100vw - 320px) / 960));
+  font-size: calc(10px + 4 * ((100vw - 320px) / 960));
+  text-align: center;
   font-weight: 700;
   text-transform: uppercase;
   margin: 2rem 0;
@@ -1425,6 +1429,10 @@ body {
   padding: 20px 54px 0 54px;
 }
 
+.wrapper {
+  position: relative;
+}
+
 .header__nav {
   visibility: hidden;
   position: absolute;
@@ -1527,8 +1535,8 @@ body {
 }
 
 .side__nav {
-  position: absolute;
-  max-width: 90%;
+  position: relative;
+  width: 50px;
   margin: 0;
   margin-top: 45px;
   z-index: 20;
@@ -1559,15 +1567,21 @@ body {
   content: "";
   width: 2px;
   height: 100%;
-  right: 53px;
+  right: 52px;
   top: 0;
   background-color: #252525;
 }
 
 .side__nav .side__nav-list .side__nav-items {
   position: relative;
-  left: 5px;
+  left: -2px;
   cursor: pointer;
+}
+
+.side__nav .side__nav-list .side__nav-items .nav__items-title {
+  position: relative;
+  visibility: hidden;
+  color: #ffffff;
 }
 
 .side__nav .side__nav-list .side__nav-items:before {
@@ -1576,12 +1590,6 @@ body {
   counter-increment: section;
   visibility: visible;
   color: #252525;
-}
-
-.side__nav .side__nav-list .side__nav-items .nav__items-title {
-  position: relative;
-  visibility: hidden;
-  color: #ffffff;
 }
 
 .side__nav .side__nav-list .side__nav-items:after {
@@ -1604,7 +1612,7 @@ body {
 }
 
 .side__nav .side__nav-list .is-active:before {
-  left: -35px;
+  left: -40px;
   color: #ffffff;
 }
 
@@ -1613,7 +1621,11 @@ body {
 }
 
 .main {
-  position: relative;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  bottom: 0;
   height: 90vh;
   width: 80%;
   margin: 0 auto;
@@ -1637,7 +1649,6 @@ body {
 .main .section-active {
   visibility: visible;
   opacity: 1;
-  overflow: hidden;
   -webkit-transition: all .2s ease-in-out .2s;
   -o-transition: all .2s ease-in-out .2s;
   transition: all .2s ease-in-out .2s;
