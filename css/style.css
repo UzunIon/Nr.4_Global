@@ -6,6 +6,7 @@
   src: local("☺"), url("../fonts/Montserrat-Black.woff") format("woff"), url("../fonts/Montserrat-Black.ttf") format("truetype"), url("../fonts/Montserrat-Black.svg") format("svg");
   font-weight: 900;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -14,6 +15,7 @@
   src: local("☺"), url("../fonts/Montserrat-Bold.woff") format("woff"), url("../fonts/Montserrat-Bold.ttf") format("truetype"), url("../fonts/Montserrat-Bold.svg") format("svg");
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -22,6 +24,7 @@
   src: local("☺"), url("../fonts/Montserrat-Regular.woff") format("woff"), url("../fonts/Montserrat-Regular.ttf") format("truetype"), url("../fonts/Montserrat-Regular.svg") format("svg");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -30,6 +33,7 @@
   src: local("☺"), url("../fonts/Montserrat-Light.woff") format("woff"), url("../fonts/Montserrat-Light.ttf") format("truetype"), url("../fonts/Montserrat-Light.svg") format("svg");
   font-weight: 300;
   font-style: normal;
+  font-display: swap;
 }
 
 * {
@@ -557,7 +561,6 @@ template {
   border: none;
   background-color: #0b0b0b;
   color: #ffffff;
-  outline: none;
   text-transform: uppercase;
   cursor: pointer;
   z-index: 4;
@@ -587,14 +590,18 @@ template {
   transition: left .2s linear;
 }
 
-.home .inner .home__content .home__content-btn:hover svg {
+.home .inner .home__content .home__content-btn:hover svg,
+.home .inner .home__content .home__content-btn:focus svg,
+.home .inner .home__content .home__content-btn:active svg {
   left: 3px;
   -webkit-transition: left .2s linear;
   -o-transition: left .2s linear;
   transition: left .2s linear;
 }
 
-.home .inner .home__content .home__content-btn:hover:before {
+.home .inner .home__content .home__content-btn:hover:before,
+.home .inner .home__content .home__content-btn:focus:before,
+.home .inner .home__content .home__content-btn:active:before {
   left: 0;
   -webkit-transition: left .2s linear;
   -o-transition: left .2s linear;
@@ -627,7 +634,6 @@ template {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin-bottom: 15px;
 }
 
 .home .home__content-footer .home__content-items:before {
@@ -666,6 +672,7 @@ template {
   font-weight: 500;
   letter-spacing: 0.5px;
   line-height: 15px;
+  margin-top: 10px;
 }
 
 .about {
@@ -754,7 +761,9 @@ template {
   transition: left .2s linear;
 }
 
-.about .about__btn:hover:before {
+.about .about__btn:hover:before,
+.about .about__btn:focus:before,
+.about .about__btn:active:before {
   width: 85px;
 }
 
@@ -798,7 +807,9 @@ template {
   transition: all .2s linear;
 }
 
-.about .outer .about__card:hover {
+.about .outer .about__card:hover,
+.about .outer .about__card:focus,
+.about .outer .about__card:active {
   border: 0 solid #0023ff;
   -webkit-transition: all .2s linear;
   -o-transition: all .2s linear;
@@ -853,7 +864,9 @@ template {
   transition: all .2s linear;
 }
 
-.contact .contact__block .contact__block-item:hover {
+.contact .contact__block .contact__block-item:hover,
+.contact .contact__block .contact__block-item:focus,
+.contact .contact__block .contact__block-item:active {
   border-bottom: 2px solid #0023ff;
   -webkit-transition: all .2s linear;
   -o-transition: all .2s linear;
@@ -894,7 +907,9 @@ template {
   transition: all .3s linear;
 }
 
-.contact .contact__block .contact__social .contact__item-btn:hover {
+.contact .contact__block .contact__social .contact__item-btn:hover,
+.contact .contact__block .contact__social .contact__item-btn:focus,
+.contact .contact__block .contact__social .contact__item-btn:active {
   background-color: transparent;
   -webkit-transition: all .3s linear;
   -o-transition: all .3s linear;
@@ -908,7 +923,9 @@ template {
   transition: all .3s linear;
 }
 
-.contact .contact__block .contact__social .behance:hover {
+.contact .contact__block .contact__social .behance:hover,
+.contact .contact__block .contact__social .behance:focus,
+.contact .contact__block .contact__social .behance:active {
   border: 5px solid #1769ff;
   -webkit-transition: all .3s linear;
   -o-transition: all .3s linear;
@@ -922,7 +939,9 @@ template {
   transition: all .3s linear;
 }
 
-.contact .contact__block .contact__social .dribbble:hover {
+.contact .contact__block .contact__social .dribbble:hover,
+.contact .contact__block .contact__social .dribbble:focus,
+.contact .contact__block .contact__social .dribbble:active {
   border: 5px solid #ea4c89;
   -webkit-transition: all .3s linear;
   -o-transition: all .3s linear;
@@ -936,7 +955,9 @@ template {
   transition: all .3s linear;
 }
 
-.contact .contact__block .contact__social .contact-us:hover {
+.contact .contact__block .contact__social .contact-us:hover,
+.contact .contact__block .contact__social .contact-us:focus,
+.contact .contact__block .contact__social .contact-us:active {
   border: 5px solid #0023ff;
   -webkit-transition: all .3s linear;
   -o-transition: all .3s linear;
@@ -1053,7 +1074,9 @@ template {
   transition: width .2s ease-in-out;
 }
 
-.hire__us .hire__us-form .hire__us-row .wrapper input:checked + .hire__us-label {
+.hire__us .hire__us-form .hire__us-row .wrapper input:checked,
+.hire__us .hire__us-form .hire__us-row .wrapper input:focus,
+.hire__us .hire__us-form .hire__us-row .wrapper input:active + .hire__us-label {
   background-color: #0023ff;
   border-color: #0023ff;
   -webkit-transition: all .2s linear;
@@ -1061,7 +1084,9 @@ template {
   transition: all .2s linear;
 }
 
-.hire__us .hire__us-form .hire__us-row .wrapper input:checked + .hire__us-label svg {
+.hire__us .hire__us-form .hire__us-row .wrapper input:checked svg,
+.hire__us .hire__us-form .hire__us-row .wrapper input:focus svg,
+.hire__us .hire__us-form .hire__us-row .wrapper input:active + .hire__us-label svg {
   width: 13px;
   -webkit-transition: width .2s ease-in-out;
   -o-transition: width .2s ease-in-out;
@@ -1081,6 +1106,7 @@ template {
 .hire__us .hire__us-form .hire__us-input .hire__us-name {
   width: 35%;
   border-bottom: 1px solid #ffffff;
+  border-radius: 0;
   background-color: transparent;
   color: #ffffff;
   font-size: calc(14px + 11 * ((100vw - 320px) / 960));
@@ -1122,35 +1148,36 @@ template {
   transition: all .2s linear;
 }
 
-.hire__us .hire__us-form .hire__us-input .hire__us-name:focus::-webkit-input-placeholder {
+.hire__us .hire__us-form .hire__us-input .hire__us-name:focus::-webkit-input-placeholder, .hire__us .hire__us-form .hire__us-input .hire__us-name:active::-webkit-input-placeholder {
   color: #252525;
   font-size: calc(12px + 3 * ((100vw - 320px) / 960));
   -webkit-transition: all .2s linear;
   transition: all .2s linear;
 }
 
-.hire__us .hire__us-form .hire__us-input .hire__us-name:focus::-moz-placeholder {
+.hire__us .hire__us-form .hire__us-input .hire__us-name:focus::-moz-placeholder, .hire__us .hire__us-form .hire__us-input .hire__us-name:active::-moz-placeholder {
   color: #252525;
   font-size: calc(12px + 3 * ((100vw - 320px) / 960));
   -moz-transition: all .2s linear;
   transition: all .2s linear;
 }
 
-.hire__us .hire__us-form .hire__us-input .hire__us-name:focus:-ms-input-placeholder {
+.hire__us .hire__us-form .hire__us-input .hire__us-name:focus:-ms-input-placeholder, .hire__us .hire__us-form .hire__us-input .hire__us-name:active:-ms-input-placeholder {
   color: #252525;
   font-size: calc(12px + 3 * ((100vw - 320px) / 960));
   -ms-transition: all .2s linear;
   transition: all .2s linear;
 }
 
-.hire__us .hire__us-form .hire__us-input .hire__us-name:focus::-ms-input-placeholder {
+.hire__us .hire__us-form .hire__us-input .hire__us-name:focus::-ms-input-placeholder, .hire__us .hire__us-form .hire__us-input .hire__us-name:active::-ms-input-placeholder {
   color: #252525;
   font-size: calc(12px + 3 * ((100vw - 320px) / 960));
   -ms-transition: all .2s linear;
   transition: all .2s linear;
 }
 
-.hire__us .hire__us-form .hire__us-input .hire__us-name:focus::placeholder {
+.hire__us .hire__us-form .hire__us-input .hire__us-name:focus::placeholder,
+.hire__us .hire__us-form .hire__us-input .hire__us-name:active::placeholder {
   color: #252525;
   font-size: calc(12px + 3 * ((100vw - 320px) / 960));
   -webkit-transition: all .2s linear;
@@ -1161,6 +1188,7 @@ template {
 .hire__us .hire__us-form .hire__us-input .hire__us-email {
   width: 35%;
   border-bottom: 1px solid #ffffff;
+  border-radius: 0;
   background-color: transparent;
   color: #ffffff;
   font-size: calc(14px + 11 * ((100vw - 320px) / 960));
@@ -1198,35 +1226,36 @@ template {
   transition: all .2s linear;
 }
 
-.hire__us .hire__us-form .hire__us-input .hire__us-email:focus::-webkit-input-placeholder {
+.hire__us .hire__us-form .hire__us-input .hire__us-email:focus::-webkit-input-placeholder, .hire__us .hire__us-form .hire__us-input .hire__us-email:active::-webkit-input-placeholder {
   color: #252525;
   font-size: calc(12px + 3 * ((100vw - 320px) / 960));
   -webkit-transition: all .2s linear;
   transition: all .2s linear;
 }
 
-.hire__us .hire__us-form .hire__us-input .hire__us-email:focus::-moz-placeholder {
+.hire__us .hire__us-form .hire__us-input .hire__us-email:focus::-moz-placeholder, .hire__us .hire__us-form .hire__us-input .hire__us-email:active::-moz-placeholder {
   color: #252525;
   font-size: calc(12px + 3 * ((100vw - 320px) / 960));
   -moz-transition: all .2s linear;
   transition: all .2s linear;
 }
 
-.hire__us .hire__us-form .hire__us-input .hire__us-email:focus:-ms-input-placeholder {
+.hire__us .hire__us-form .hire__us-input .hire__us-email:focus:-ms-input-placeholder, .hire__us .hire__us-form .hire__us-input .hire__us-email:active:-ms-input-placeholder {
   color: #252525;
   font-size: calc(12px + 3 * ((100vw - 320px) / 960));
   -ms-transition: all .2s linear;
   transition: all .2s linear;
 }
 
-.hire__us .hire__us-form .hire__us-input .hire__us-email:focus::-ms-input-placeholder {
+.hire__us .hire__us-form .hire__us-input .hire__us-email:focus::-ms-input-placeholder, .hire__us .hire__us-form .hire__us-input .hire__us-email:active::-ms-input-placeholder {
   color: #252525;
   font-size: calc(12px + 3 * ((100vw - 320px) / 960));
   -ms-transition: all .2s linear;
   transition: all .2s linear;
 }
 
-.hire__us .hire__us-form .hire__us-input .hire__us-email:focus::placeholder {
+.hire__us .hire__us-form .hire__us-input .hire__us-email:focus::placeholder,
+.hire__us .hire__us-form .hire__us-input .hire__us-email:active::placeholder {
   color: #252525;
   font-size: calc(12px + 3 * ((100vw - 320px) / 960));
   -webkit-transition: all .2s linear;
@@ -1241,7 +1270,9 @@ template {
   padding: 10px 60px;
 }
 
-.hire__us .hire__us-btn:hover {
+.hire__us .hire__us-btn:hover,
+.hire__us .hire__us-btn:focus,
+.hire__us .hire__us-btn:active {
   background-color: #001599;
 }
 
@@ -1376,7 +1407,9 @@ template {
   fill: #ffffff;
 }
 
-.works .works__slider .slider__prev:hover {
+.works .works__slider .slider__prev:hover,
+.works .works__slider .slider__prev:focus,
+.works .works__slider .slider__prev:active {
   background-color: #0023ff;
   -webkit-transition: all .2s linear;
   -o-transition: all .2s linear;
@@ -1409,7 +1442,9 @@ template {
   fill: #ffffff;
 }
 
-.works .works__slider .slider__next:hover {
+.works .works__slider .slider__next:hover,
+.works .works__slider .slider__next:focus,
+.works .works__slider .slider__next:active {
   background-color: #0023ff;
   -webkit-transition: all .2s linear;
   -o-transition: all .2s linear;
@@ -1501,6 +1536,7 @@ body {
   height: 20px;
   border: none;
   background-color: #0b0b0b;
+  outline-color: #0023ff;
   cursor: pointer;
 }
 

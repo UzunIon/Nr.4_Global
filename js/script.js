@@ -2,11 +2,7 @@
 
 var parrentSideNav = document.getElementsByClassName("side__nav-list");
 var activeSideItem = Array.from(document.querySelectorAll(".side__nav-items"));
-var sections = document.querySelectorAll(".section"); // console.log(sections)
-// console.log(activeSideItem[0])
-//  if( sections.includes.className( "Work")){
-// console.log(sections[2])
-//  }
+var sections = document.querySelectorAll(".section");
 
 var _loop = function _loop(i) {
   activeSideItem[i].addEventListener("click", function (event) {
@@ -17,8 +13,7 @@ var _loop = function _loop(i) {
       event.target.classList.add("is-active");
       currentNavPos.classList.remove("is-active");
       sections[i].classList.add("section-active");
-      currentContentPos.classList.remove("section-active");
-      currentContentPos.classList.add("section-next");
+      currentContentPos.classList.remove("section-active"); // currentContentPos.classList.add("section-next")
     } else {
       return;
     }
@@ -27,24 +22,7 @@ var _loop = function _loop(i) {
 
 for (var i = 0; i < activeSideItem.length; i++) {
   _loop(i);
-} // activeSideItem.forEach(function(item, index, arr)  {
-//     // console.log(index)
-//     // console.log(item, index, arr)
-//     item.addEventListener( 'click', e =>{
-//         let target = e.target;
-//         let currentTarget = e.currentTarget;
-//         let currentPos = document.querySelector(".is-active");
-//         //  console.log(e.index)
-//         // console.log(sections[1])
-//         target.classList.add("is-active");
-//         currentPos.classList.remove("is-active");
-//         if( item.className = "is-active" && arr[1]){
-//             sections[1].classList.add(".sections-active");
-//         }else{
-//             return;
-//         }
-//     });
-// for( let i = 0; i < activeSideItem.length; i++ ){
+} // for( let i = 0; i < activeSideItem.length; i++ ){
 
 
 window.addEventListener('wheel', function (e) {
@@ -53,39 +31,34 @@ window.addEventListener('wheel', function (e) {
   var currentCont = document.querySelector(".section-active");
   var delta = e.deltaY || e.detail || e.wheelDelta;
   console.log(e);
+  setTimeout(function () {
+    if (delta >= 100) {
+      /* adaugat conditie || daca nu e primul sau ultimul elem*/
+      var nextElem = currentPos.nextElementSibling;
+      var nextCont = currentCont.nextElementSibling;
+      nextElem.classList.add("is-active");
+      currentPos.classList.remove("is-active");
+      nextCont.classList.add("section-active");
+      currentCont.classList.remove("section-active");
+    } else if (delta >= -100) {
+      /* adaugat conditie || daca nu e primul sau ultimul elem sau de facut ca din ultimul elem sa fie scroll la prim*/
+      var _prevElem = currentPos.previousElementSibling;
+      var _prevCont = currentCont.previousElementSibling;
 
-  if (delta >= 100) {
-    /* adaugat conditie || daca nu e primul sau ultimul elem*/
-    var nextElem = currentPos.nextElementSibling;
-    var nextCont = currentCont.nextElementSibling;
-    nextElem.classList.add("is-active");
-    currentPos.classList.remove("is-active");
-    nextCont.classList.add("section-active");
-    currentCont.classList.remove("section-active");
-  } else if (delta >= -100) {
-    /* adaugat conditie || daca nu e primul sau ultimul elem sau de facut ca din ultimul elem sa fie scroll la prim*/
-    var prevElem = currentPos.previousElementSibling;
-    var prevCont = currentCont.previousElementSibling;
-    prevElem.classList.add("is-active");
-    currentPos.classList.remove("is-active");
-    prevCont.classList.add("section-active");
-    currentCont.classList.remove("section-active");
-  } else {
-    return;
-  }
+      _prevElem.classList.add("is-active");
+
+      currentPos.classList.remove("is-active");
+
+      _prevCont.classList.add("section-active");
+
+      currentCont.classList.remove("section-active");
+    } else if (prevElem == null || prevCont == null) {
+      return;
+    } else {
+      return;
+    }
+  }, 400);
 }); // }
-// document.querySelector(".wrapper").addEventListener('swiped', function(e) {
-//     console.log(e.target); // element that was swiped
-//     console.log(e.detail.dir); // swipe direction
-//   });
-// HAMMER for swipes
-// const targetElement = document.getElementById('.wrapper'),
-// mc = new Hammer(targetElement);
-// mc.get('swipe').set({ direction: Hammer.DIRECTION_VERTICAL });
-// mc.on('swipeup swipedown', function(e) {
-// console.log(e)
-// console.log(targetElement);
-// });
 
 window.addEventListener("touchstart", startTouch, false);
 window.addEventListener("touchmove", moveTouch, false); // Swipe Up / Down / Left / Right
@@ -106,27 +79,33 @@ function moveTouch(e) {
     return;
   }
 
-  var currentY = e.touches[0].clientY;
-  var diffY = initialY - currentY; // sliding vertically
+  var currentY = e.touches[0].clientY; // console.log(clientY)
 
-  if (diffY > 0) {
-    var nextElem = currentPos.nextElementSibling;
-    var nextCont = currentCont.nextElementSibling;
-    nextElem.classList.add("is-active");
-    currentPos.classList.remove("is-active");
-    nextCont.classList.add("section-active");
-    currentCont.classList.remove("section-active");
-  } else {
-    var prevElem = currentPos.previousElementSibling;
-    var prevCont = currentCont.previousElementSibling;
-    prevElem.classList.add("is-active");
-    currentPos.classList.remove("is-active");
-    prevCont.classList.add("section-active");
-    currentCont.classList.remove("section-active");
-  }
+  var diffY = initialY - currentY; // console.log(diffY)
+  // sliding vertically
 
-  initialY = null;
-  e.preventDefault();
+  setTimeout(function () {
+    if (diffY > 0) {
+      var nextElem = currentPos.nextElementSibling;
+      var nextCont = currentCont.nextElementSibling;
+      nextElem.classList.add("is-active");
+      currentPos.classList.remove("is-active");
+      nextCont.classList.add("section-active");
+      currentCont.classList.remove("section-active");
+    } else {
+      var _prevElem2 = currentPos.previousElementSibling;
+      var _prevCont2 = currentCont.previousElementSibling;
+
+      _prevElem2.classList.add("is-active");
+
+      currentPos.classList.remove("is-active");
+
+      _prevCont2.classList.add("section-active");
+
+      currentCont.classList.remove("section-active");
+    }
+  }, 500);
+  initialY = null; // e.preventDefault();
 }
 
 ; //   SLIDER
@@ -134,11 +113,44 @@ function moveTouch(e) {
 var sliderBtnPrev = document.querySelector(".slider__prev");
 var sliderBtnNext = document.querySelector(".slider__next");
 var sliderItems = document.querySelectorAll(".slider__item");
-var curItem = document.querySelector(".center__item"); // sliderBtnPrev.addEventListener( 'click', item=>{
-//     // for(  let i=0; i<sliderItems.length; i++ ){
-//     //     if( sliderItems[i] ){
-//     //     }
-//     //    }
-// });
+var sliderLenghts = sliderItems.length; // let slideritem = document.querySelectorAll(".works__slider-item");
+// let curItem = document.querySelector(".center__item");
 
-sliderBtnNext.addEventListener('click', function (item) {});
+var count = 0;
+
+function ShowPrevItem() {
+  sliderItems[count].classList.remove("center__item");
+  sliderItems[count].classList.remove("left__item");
+  sliderItems[count].classList.remove("right__item");
+
+  if (count > 0) {
+    count--;
+  } else {
+    count = sliderLenghts - 1;
+  }
+
+  sliderItems[count].classList.add("right__item");
+  sliderItems[count].classList.add("center__item");
+  sliderItems[count].classList.add("left__item");
+  console.log(count);
+}
+
+function ShowNextItem() {
+  sliderItems[count].classList.add("center__item");
+  sliderItems[count].classList.add("left__item");
+  sliderItems[count].classList.add("right__item");
+
+  if (count < sliderLenghts - 1) {
+    count++;
+  } else {
+    count = 0;
+  }
+
+  sliderItems[count].classList.remove("center__item");
+  sliderItems[count].classList.remove("left__item");
+  sliderItems[count].classList.remove("right__item");
+  console.log(count);
+}
+
+sliderBtnPrev.addEventListener('click', ShowPrevItem);
+sliderBtnNext.addEventListener('click', ShowNextItem);
