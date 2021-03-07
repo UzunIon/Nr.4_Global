@@ -119,26 +119,23 @@ var sliderLenghts = sliderItems.length; // let slideritem = document.querySelect
 var count = 0;
 
 function ShowPrevItem() {
-  sliderItems[count].classList.remove("center__item");
-  sliderItems[count].classList.remove("left__item");
-  sliderItems[count].classList.remove("right__item");
+  sliderItems[count].classList.remove("center__item"); // sliderItems[count].classList.remove("left__item");
+  // sliderItems[count].classList.remove("right__item");
 
   if (count > 0) {
     count--;
   } else {
     count = sliderLenghts - 1;
-  }
+  } // sliderItems[count].classList.add("right__item");
 
-  sliderItems[count].classList.add("right__item");
-  sliderItems[count].classList.add("center__item");
-  sliderItems[count].classList.add("left__item");
-  console.log(count);
+
+  sliderItems[count].classList.add("center__item"); // sliderItems[count].classList.add("left__item");
+  // console.log(count)
 }
 
 function ShowNextItem() {
-  sliderItems[count].classList.add("center__item");
-  sliderItems[count].classList.add("left__item");
-  sliderItems[count].classList.add("right__item");
+  sliderItems[count].classList.add("center__item"); // sliderItems[count].classList.add("left__item");
+  // sliderItems[count].classList.add("right__item");
 
   if (count < sliderLenghts - 1) {
     count++;
@@ -146,11 +143,30 @@ function ShowNextItem() {
     count = 0;
   }
 
-  sliderItems[count].classList.remove("center__item");
-  sliderItems[count].classList.remove("left__item");
-  sliderItems[count].classList.remove("right__item");
-  console.log(count);
+  sliderItems[count].classList.remove("center__item"); // sliderItems[count].classList.remove("left__item");
+  // sliderItems[count].classList.remove("right__item");
+  // console.log(count)
 }
 
 sliderBtnPrev.addEventListener('click', ShowPrevItem);
-sliderBtnNext.addEventListener('click', ShowNextItem);
+sliderBtnNext.addEventListener('click', ShowNextItem); //  BURGER
+
+var BurgerBtn = document.querySelector(".header__burger-btn");
+var wrapp = document.querySelector(".wrapper");
+var headerNav = document.querySelector(".header__nav");
+var headerItems = document.querySelectorAll(".header__nav-items");
+
+function OpenBurger() {
+  wrapp.classList.add("open");
+  headerNav.style.visibility = "visible";
+}
+
+function OpenPages() {
+  wrapp.classList.remove("open");
+  headerNav.style.visibility = "hidden";
+}
+
+BurgerBtn.addEventListener('click', OpenBurger);
+headerItems.forEach(function (item) {
+  item.addEventListener('click', OpenPages);
+});

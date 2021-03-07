@@ -899,7 +899,7 @@ template {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 110px;
+  width: 130px;
   height: 40px;
   color: #ffffff;
   -webkit-transition: all .3s linear;
@@ -962,6 +962,10 @@ template {
   -webkit-transition: all .3s linear;
   -o-transition: all .3s linear;
   transition: all .3s linear;
+}
+
+.contact .contact__block .contact__social .contact-us span {
+  font-size: calc(12px + 3 * ((100vw - 320px) / 960));
 }
 
 .hire__us {
@@ -1033,6 +1037,9 @@ template {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 .hire__us .hire__us-form .hire__us-row .wrapper .hire__us-checkbox {
@@ -1055,7 +1062,9 @@ template {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 180px;
+  min-width: 180px;
+  width: 280px;
+  max-width: 100%;
   height: 40px;
   border: 1px solid #ffffff;
   font-size: calc(12px + 6 * ((100vw - 320px) / 960));
@@ -1074,9 +1083,7 @@ template {
   transition: width .2s ease-in-out;
 }
 
-.hire__us .hire__us-form .hire__us-row .wrapper input:checked,
-.hire__us .hire__us-form .hire__us-row .wrapper input:focus,
-.hire__us .hire__us-form .hire__us-row .wrapper input:active + .hire__us-label {
+.hire__us .hire__us-form .hire__us-row .wrapper input:checked + .hire__us-label {
   background-color: #0023ff;
   border-color: #0023ff;
   -webkit-transition: all .2s linear;
@@ -1084,9 +1091,7 @@ template {
   transition: all .2s linear;
 }
 
-.hire__us .hire__us-form .hire__us-row .wrapper input:checked svg,
-.hire__us .hire__us-form .hire__us-row .wrapper input:focus svg,
-.hire__us .hire__us-form .hire__us-row .wrapper input:active + .hire__us-label svg {
+.hire__us .hire__us-form .hire__us-row .wrapper input:checked + .hire__us-label svg {
   width: 13px;
   -webkit-transition: width .2s ease-in-out;
   -o-transition: width .2s ease-in-out;
@@ -1354,12 +1359,6 @@ template {
   visibility: hidden;
 }
 
-.works .works__slider .center__item {
-  -webkit-box-ordinal-group: 3;
-      -ms-flex-order: 2;
-          order: 2;
-}
-
 .works .works__slider .center__item .works__slider-img {
   width: 260px;
   height: 260px;
@@ -1455,6 +1454,8 @@ body {
   background-color: #0b0b0b;
   color: #ffffff;
   font-family: "Montserrat", sans-serif;
+  -webkit-perspective: 1500px;
+          perspective: 1500px;
 }
 
 .container {
@@ -1465,20 +1466,43 @@ body {
 }
 
 .wrapper {
-  position: relative;
+  -webkit-transition: all .2s linear;
+  -o-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+.open {
+  -webkit-perspective: 1500px;
+          perspective: 1500px;
+  -webkit-transform: translateZ(-1600px) translateX(-35%) rotateY(45deg);
+          transform: translateZ(-1600px) translateX(-35%) rotateY(45deg);
+  outline: 20px solid #0f33ff;
+  -webkit-transition: all .2s linear;
+  -o-transition: all .2s linear;
+  transition: all .2s linear;
 }
 
 .header__nav {
   visibility: hidden;
   position: absolute;
-  top: 30%;
-  right: 25%;
-  font-size: calc(16px + 39 * ((100vw - 320px) / 960));
+  right: 17%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  font-size: calc(25px + 40 * ((100vw - 320px) / 960));
+  font-weight: bold;
+}
+
+.header__nav .header__nav-items {
+  margin-bottom: 5px;
 }
 
 .header__nav .header__nav-list {
   margin: 0;
-  margin-left: 80px;
   list-style: none;
 }
 
@@ -1488,6 +1512,7 @@ body {
 }
 
 .header {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1497,6 +1522,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  z-index: 20;
 }
 
 .header .header__logo {
@@ -1571,7 +1597,7 @@ body {
 }
 
 .side__nav {
-  position: relative;
+  position: absolute;
   width: 50px;
   margin: 0;
   margin-top: 45px;
@@ -1657,14 +1683,16 @@ body {
 }
 
 .main {
-  position: absolute;
-  top: 50px;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  position: relative;
   height: 90vh;
   width: 80%;
   margin: 0 auto;
+}
+
+.main .main__inner {
+  position: relative;
+  width: 100%;
+  height: 90vh;
 }
 
 .main .section {
@@ -1673,7 +1701,7 @@ body {
   right: 0;
   left: 0;
   bottom: 0;
-  padding: 0 1em;
+  padding: 0 2em;
   height: 100%;
   visibility: hidden;
   opacity: 0;
