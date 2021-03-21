@@ -1,7 +1,7 @@
 "use strict";
 
 var parrentSideNav = document.getElementsByClassName("side__nav-list");
-var activeSideItem = Array.from(document.querySelectorAll(".side__nav-items"));
+var activeSideItem = document.querySelectorAll(".side__nav-items");
 var sections = document.querySelectorAll(".section");
 
 var _loop = function _loop(i) {
@@ -117,15 +117,21 @@ var sliderLenghts = sliderItems.length; // let slideritem = document.querySelect
 // let curItem = document.querySelector(".center__item");
 
 function ShowPrevItem() {
-  sliderItems.forEach(function (item, i) {
-    item[i].classList.add("center__item");
-    item[i].classList.add("left__item");
-    item[i].classList.add("right__item");
-    item[i].classList.remove("center__item");
-    item[i].classList.remove("left__item");
-    item[i].classList.remove("right__item");
-    console.log(item);
-  });
+  for (var _i = 0; _i < sliderItems.length; _i++) {
+    if (sliderItems[_i].hasAttribute("center__item")) {
+      sliderItems[_i].classList.remove("right__item");
+
+      sliderItems[_i].classList.add("right__item");
+
+      sliderItems[_i].classList.remove("left__item");
+
+      sliderItems[_i].classList.add("left__item");
+
+      sliderItems[_i].classList.remove("center__item");
+
+      sliderItems[_i].classList.add("center__item");
+    }
+  }
 } // let count = 0
 // function ShowPrevItem() {
 //   sliderItems[count].classList.remove("center__item");
@@ -164,6 +170,7 @@ var BurgerBtn = document.querySelector(".header__burger-btn");
 var wrapp = document.querySelector(".wrapper");
 var headerNav = document.querySelector(".header__nav");
 var headerItems = document.querySelectorAll(".header__nav-items");
+var sideNavItems = document.querySelectorAll(".side__nav-items");
 
 function OpenBurger() {
   wrapp.classList.add("open");
@@ -171,24 +178,28 @@ function OpenBurger() {
 }
 
 function OpenPages() {
-  var _loop2 = function _loop2(_i) {
-    headerItems[_i].addEventListener('click', function () {
+  var _loop2 = function _loop2(_i2) {
+    headerItems[_i2].addEventListener('click', function () {
       var currentContentPos = document.querySelector(".section-active");
+      var currentSideNavPos = document.querySelector(".is-active");
+      currentSideNavPos.classList.remove("is-active");
       currentContentPos.classList.remove("section-active");
 
-      sections[_i].classList.add("section-active");
+      sections[_i2].classList.add("section-active");
+
+      sideNavItems[_i2].classList.add("is-active");
+
+      wrapp.classList.remove("open");
+      headerNav.style.visibility = "hidden";
     });
   };
 
-  for (var _i = 0; _i < headerItems.length; _i++) {
-    _loop2(_i);
+  for (var _i2 = 0; _i2 < headerItems.length; _i2++) {
+    _loop2(_i2);
   }
-
-  wrapp.classList.remove("open");
-  headerNav.style.visibility = "hidden";
 }
 
 BurgerBtn.addEventListener('click', OpenBurger);
 headerItems.forEach(function (item) {
-  item.addEventListener('click', OpenPages);
+  item.addEventListener('click', OpenPages());
 });

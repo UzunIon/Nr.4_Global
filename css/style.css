@@ -640,7 +640,6 @@ template {
   position: absolute;
   content: "";
   top: -2px;
-  left: 12px;
   width: 0;
   height: 2px;
   background-color: #0023ff;
@@ -1359,6 +1358,12 @@ template {
   visibility: hidden;
 }
 
+.works .works__slider .center__item {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
 .works .works__slider .center__item .works__slider-img {
   width: 260px;
   height: 260px;
@@ -1485,7 +1490,7 @@ body {
 .header__nav {
   visibility: hidden;
   position: absolute;
-  right: 17%;
+  right: 15%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1507,6 +1512,7 @@ body {
 }
 
 .header__nav .header__nav-list .header__nav-link {
+  position: relative;
   text-decoration: none;
   color: #ffffff;
 }
@@ -1600,7 +1606,7 @@ body {
   position: absolute;
   width: 50px;
   margin: 0;
-  margin-top: 45px;
+  margin-top: 50px;
   z-index: 20;
 }
 
@@ -1618,7 +1624,7 @@ body {
           justify-content: space-between;
   margin: 0;
   padding: 10px 0 10px 10px;
-  height: 70vh;
+  height: 80vh;
   list-style: none;
   font-size: calc(10px + 4 * ((100vw - 320px) / 960));
   counter-reset: section;
@@ -1701,7 +1707,6 @@ body {
   right: 0;
   left: 0;
   bottom: 0;
-  padding: 0 2em;
   height: 100%;
   visibility: hidden;
   opacity: 0;
@@ -1768,6 +1773,26 @@ body {
   .works {
     height: 85vh;
   }
+
+  .main .section {
+    padding: 0 2em;
+  }
+}
+
+@media (max-width: 768px) {
+  .works__slider-img {
+    width: 60px !important;
+    height: 60px !important;
+  }
+
+  .center__item {
+    margin: 0 2%;
+  }
+
+  .center__item .works__slider-img {
+    width: 150px !important;
+    height: 150px !important;
+  }
 }
 
 @media (max-width: 576px) {
@@ -1794,7 +1819,8 @@ body {
             flex-direction: column;
   }
 
-  .home .home__content-footer .home__content-items {
+  .home .home__content-footer .home__content-items:nth-child(2),
+  .home .home__content-footer .home__content-items:nth-child(3) {
     margin-top: 10px;
   }
 
@@ -1882,6 +1908,14 @@ body {
     height: 160px !important;
   }
 
+  .works__slider .left__item {
+    visibility: hidden;
+  }
+
+  .works__slider .right__item {
+    visibility: hidden;
+  }
+
   .works__slider .slider__prev {
     position: relative;
     left: 50px;
@@ -1901,10 +1935,10 @@ body {
 
 @media (max-width: 566px) {
   .works .works__slider .slider__prev {
-    padding: 3%;
+    padding: 4%;
   }
 
   .works .works__slider .slider__next {
-    padding: 3%;
+    padding: 4%;
   }
 }
