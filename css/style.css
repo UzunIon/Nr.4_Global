@@ -518,7 +518,6 @@ template {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  height: 85vh;
 }
 
 .home .inner {
@@ -688,7 +687,6 @@ template {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  height: 85vh;
   background: url(../img/about-visual.png) no-repeat right;
 }
 
@@ -1294,7 +1292,6 @@ template {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 85vh;
   width: 100%;
 }
 
@@ -1753,12 +1750,10 @@ body {
 
 @media (min-width: 576px) {
   .home {
-    height: 80vh;
     padding: 5% 0 0 0;
   }
 
   .about {
-    height: 85vh;
     padding: 5% 0;
   }
 
@@ -1768,10 +1763,6 @@ body {
 
   .hire__us .hire__us-row {
     margin-bottom: 4%;
-  }
-
-  .works {
-    height: 85vh;
   }
 
   .main .section {
