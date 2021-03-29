@@ -57,7 +57,7 @@ window.addEventListener('wheel', function (e) {
     } else {
       return;
     }
-  }, 400);
+  }, 1000);
 }); // }
 
 window.addEventListener("touchstart", startTouch, false);
@@ -118,20 +118,12 @@ var sliderLenghts = sliderItems.length; // let slideritem = document.querySelect
 
 function ShowPrevItem() {
   for (var _i = 0; _i < sliderItems.length; _i++) {
-    if (sliderItems[_i].hasAttribute("center__item")) {
-      sliderItems[_i].classList.remove("right__item");
+    // if ( sliderItems[i].hasAttribute("center__item") ){
+    sliderItems[_i].classList.add("center__item");
 
-      sliderItems[_i].classList.add("right__item");
+    sliderItems[_i].classList.remove("center__item");
+  } // }
 
-      sliderItems[_i].classList.remove("left__item");
-
-      sliderItems[_i].classList.add("left__item");
-
-      sliderItems[_i].classList.remove("center__item");
-
-      sliderItems[_i].classList.add("center__item");
-    }
-  }
 } // let count = 0
 // function ShowPrevItem() {
 //   sliderItems[count].classList.remove("center__item");
